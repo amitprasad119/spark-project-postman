@@ -19,3 +19,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.scala-logging" %% "scala-logging" % "3.7.2",
   "ch.qos.logback" % "logback-classic" % "1.2.3"
 )
+mainClass in Compile := Some("com.amit.postman.task.Driver")
+
+enablePlugins(JavaAppPackaging)
+enablePlugins(DockerPlugin)
