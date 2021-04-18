@@ -14,15 +14,22 @@ There is a large file for this application in `resource` directory of this appli
 
 ## Tables
 
-| Plugin | README |
+| Table | Details |
 | ------ | ------ |
-| sku_lookup | This table maintains the unique id(sku_id) for each sku, also null sku is replaced as `Unknown` and has sku_id too|
-| product | This table contains the details of product with reference to sku_id from  `sku_lookup` table and has name,and description columns as well |
-| product_aggregated | This table contains the product count based on name |
+| [sku_lookup]() | This table maintains the unique id(sku_id) for each sku, also null sku is replaced as `Unknown` and has sku_id too|
+| [product]() | This table contains the details of product with reference to sku_id from  `sku_lookup` table and has name,and description columns as well |
+| [product_aggregated]() | This table contains the product count based on name |
+
+Table script are in under sql folder of this project.
 
 ER Diagram for above table is below.
-![alt text](https://github.com/amitprasad119/spark-project-postman/blob/master/ER_diagram.png)
+![alt text](https://github.com/amitprasad119/spark-project-postman/blob/master/ER_diagram.png) 
 
+## Points to achieve
+   ### Done
+  1, 2,4,5 are achieved.
+   ### Yet to be done
+      Non blocking is yet to be achieved efficiently, but for now it can read multiple files and import it into database.
 
 ## How it works 
 
@@ -33,3 +40,11 @@ This app will read the file and create the `sku_lookup` table based on the `sku`
 Next `sku_id` will be referenced to `product` table and will have details with `sku_id`,`name`,`description`.
 
 Additionally is has created_at metadata also.
+
+Also there is a table `product_aggregated` which has `name` and `total` number of item sfor that name.
+
+## Steps to Run 
+
+
+
+
