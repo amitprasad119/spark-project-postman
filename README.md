@@ -1,1 +1,35 @@
 # spark-project-postman
+ This application is created with the intention of exporting large/small sized `.csv` file(s) and dump it into the database(postgres configured for this app). 
+
+## Required
+
+  - Scala 2.12.12
+  - Spark 3.0.1
+  - sbt  0.13.18
+  - postgres 13.2
+  
+There is a large file for this application in `resource` directory of this application which is default source for file, if user wants to send they can send multiple files through commnd line. 
+
+`Driver.scala` is the main class for this application and also entry for this applcation.
+
+## Tables
+
+| Plugin | README |
+| ------ | ------ |
+| sku_lookup | This table maintains the unique id(sku_id) for each sku, also null sku is replaced as `Unknown` and has sku_id too|
+| product | This table contains the details of product with reference to sku_id from  `sku_lookup` table and has name,and description columns as well |
+| product_aggregated | This table contains the product count based on name |
+
+ER Diagram for above table is below.
+![alt text](https://github.com/amitprasad119/spark-project-postman/blob/master/ER_diagram.png)
+
+
+## How it works 
+
+There are three columns in `csv` file `name`,`sku`,`description` which are comma seprated.
+
+This app will read the file and create the `sku_lookup` table based on the `sku` and when sku_table(sku_id) are created
+
+Next `sku_id` will be referenced to `product` table and will have details with `sku_id`,`name`,`description`.
+
+Additionally is has created_at metadata also.
