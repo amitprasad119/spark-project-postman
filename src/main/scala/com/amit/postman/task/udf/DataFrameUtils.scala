@@ -12,7 +12,7 @@ object DataFrameUtils {
   def createProductDFWithForeignKey(skuLookUpDF:DataFrame,productDF:DataFrame):DataFrame = {
     val productDFWithoutNull =  productDF.na.fill("Unknown",Array("sku"))
     val df = skuLookUpDF.join(productDFWithoutNull, skuLookUpDF("sku") === productDFWithoutNull("sku"))
-     df.select(skuLookUpDF.col("sku_id"),productDFWithoutNull.col("name"),productDFWithoutNull.col("sku"),productDFWithoutNull.col("description"))
+     df.select(skuLookUpDF.col("sku_id"),productDFWithoutNull.col("name"),productDFWithoutNull.col("description"))
   }
 
   def createAggregateProductDF(sourceDF:DataFrame)(implicit sparkSession: SparkSession):DataFrame = {
