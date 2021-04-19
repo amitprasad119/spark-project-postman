@@ -48,5 +48,9 @@ Also there is a table `product_aggregated` which has `name` and `total` number o
  1. ```sbt docker:publishLocal  ```
   2. `docker run <jar file> <files as arguments>`
 
-
+## Table contents for all three are below 
+![sku_lookup](https://github.com/amitprasad119/spark-project-postman/blob/master/ER_diagram.png)
+![product](https://github.com/amitprasad119/spark-project-postman/blob/master/ER_diagram.png) 
+![product_aggregated](https://github.com/amitprasad119/spark-project-postman/blob/master/ER_diagram.png) 
+ 
 
