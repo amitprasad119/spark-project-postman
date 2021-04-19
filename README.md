@@ -16,9 +16,9 @@ There is a large file for this application in `resource` directory of this appli
 
 | Table | Details |
 | ------ | ------ |
-| [sku_lookup]() | This table maintains the unique id(sku_id) for each sku, also null sku is replaced as `Unknown` and has sku_id too|
-| [product]() | This table contains the details of product with reference to sku_id from  `sku_lookup` table and has name,and description columns as well |
-| [product_aggregated]() | This table contains the product count based on name |
+| [sku_lookup](https://github.com/amitprasad119/spark-project-postman/blob/master/src/main/sql/sku_lookup.sql) | This table maintains the unique id(sku_id) for each sku, also null sku is replaced as `Unknown` and has sku_id too|
+| [product](https://github.com/amitprasad119/spark-project-postman/blob/master/src/main/sql/product.sql) | This table contains the details of product with reference to sku_id from  `sku_lookup` table and has name,and description columns as well |
+| [product_aggregated](https://github.com/amitprasad119/spark-project-postman/blob/master/src/main/sql/product_aggregated.sql) | This table contains the product count based on name |
 
 Table script are in under sql folder of this project.
 
