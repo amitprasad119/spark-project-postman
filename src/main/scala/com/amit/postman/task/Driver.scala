@@ -5,11 +5,18 @@ import com.amit.postman.task.common.SparkInit
 import com.amit.postman.task.config.AppConfig
 import com.amit.postman.task.ingestion.DataIngestion
 import com.amit.postman.task.udf.DataFrameUtils
+import com.typesafe.scalalogging.LazyLogging
+import io.netty.util.internal.PlatformDependent
 import org.apache.spark.sql.{SaveMode, SparkSession}
-object Driver extends AppConfig {
+import org.apache.log4j.BasicConfigurator
+
+object Driver extends AppConfig with LazyLogging{
   def main(args: Array[String]): Unit = {
     System.setProperty("hadoop.home.dir", "/")
+    BasicConfigurator.configure()
+    PlatformDependent.getContextClassLoader()
    val sourceFiles =   if(args.length  == 0) Array("src/main/resources/products.csv") else args
+    logger.info(s"Input files are:${sourceFiles.mkString("\n")}")
     runApp(sourceFiles)
   }
 

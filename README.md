@@ -45,6 +45,8 @@ Also there is a table `product_aggregated` which has `name` and `total` number o
 
 ## Steps to Run 
 
+ 1. ```sbt docker:publishLocal  ```
+  2. `docker run <jar file> <files as arguments>`
 
 
 
